@@ -356,7 +356,7 @@ class PizzaBoxFS(Device):
         "Call encoder.kickoff() for every encoder."
         for attr_name in ['enc1', 'enc2', 'enc3', 'enc4']:
             status = getattr(self, attr_name).kickoff()
-            print("Eli's test", self.attr_name)
+            #print("Eli's test", self.attr_name)
         # it's fine to just return one of the status objects
         return status
 
@@ -369,10 +369,15 @@ class PizzaBoxFS(Device):
         for attr_name in ['enc1', 'enc2', 'enc3', 'enc4']:
             yield from getattr(self, attr_name).collect()
 
+
+
 print("init pizza box")
 pb1 = PizzaBoxFS('XF:07BM-CT{Enc01', name = 'pb1')
 #pb1.enc1.pulses_per_deg = 9400000/360
 pb1.enc1.pulses_per_deg=23600*400/360
+
+pb2 = PizzaBoxFS('XF:07BMB-CT{Enc02', name = 'pb2')
+
 print('done')
 
 

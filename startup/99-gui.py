@@ -70,4 +70,4 @@ def xlive():
 #xview_gui = XviewGui(PB_PULSES_PER_DEGREE)
 
 
-xlive()
+#xlive()
